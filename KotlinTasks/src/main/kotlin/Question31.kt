@@ -1,3 +1,4 @@
+import java.util.Arrays
 
 fun main(args: Array<String>) {
 
@@ -5,8 +6,7 @@ fun main(args: Array<String>) {
 
     var square = Square ();
     var rect = Rectangle ();
-    var arr : Array<Shape> = arrayOf(circle, rect, square)
-
+    var arr : Array<Shape> = arrayOf(circle,square,rect);
     for(j in arr)
     {
         println(j.draw())
