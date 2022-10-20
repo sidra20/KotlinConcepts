@@ -12,8 +12,10 @@ fun main(args: Array<String>) {
     obj.bubbleSort(myArray)
 
     val reader  = Scanner(System.`in`);
+    println("\nSearch for a value")
     var inp:Int = reader.nextInt();
-    obj.binarySearch(myArray,inp)
+    val index=obj.binarySearch(myArray,inp)
+    if(index!=-1) println("The value $inp is in the sorted array at index $index") else println("Value not found")
 
 }
 
@@ -53,6 +55,23 @@ class MyClass{
     }
     fun binarySearch(arr: IntArray, value:Int):Int
     {
-         return 0
+         var low=0
+        var high=arr.size-1
+        while(low<=high)
+        {
+            var mid = low+(high-low)/2
+            if(arr[mid]==value )
+            {
+                return mid
+            }
+            if(arr[mid]<value)
+            {
+                low=mid+1
+            }
+            else{
+                high = mid-1
+            }
+        }
+        return -1
     }
 }
